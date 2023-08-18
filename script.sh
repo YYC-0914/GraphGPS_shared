@@ -1,3 +1,4 @@
+# for storing frequently used shell commands for running experiments 
 python main.py --cfg configs/VGN/zinc-VGN.yaml  wandb.use False
 
 python main.py --cfg configs/GPS/zinc-GPS-LapPE+RWSE.yaml  wandb.use False

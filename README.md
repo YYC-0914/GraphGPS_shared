@@ -1,4 +1,14 @@
-# GraphGPS: General Powerful Scalable Graph Transformers
+ ### How to use this repo?
+
+1. 现在最好的结果可以直接在Graphgps_shared directory下使用指令执行, 所跑的model是使用LapPE, RWSE, 并且GIMaskEncoder(Graph Invariant MaskEncoder)的输入是degree以及pagerank。具体model的构型可以参考configs/VGN/zinc-GINE_LapPE+GIMask+RWSE.yaml, 比较重要的几个参数是总共5层，每层使用5个clusters，并且其中involve的GINEConv的hidden dimension是128，模型的总参数量为: 479261
+```
+chmod +x ./run/run_experiments.sh
+./run/run_experimetns
+```
+2. 在run_experiments file中已经读取了当前最好的模型的config，只会跑一个seed。如果想要跑多个seed的话可以调整上方shell语句的iteration数量。实验进行时会有一个slurm out file出现实时回报当前的performance。最终的结果会被存放在results文件夹中。具体文件的命名可以直接调整shell file，现在的命名为zinc-VGN_LapPE+GIMask+RWSE "name_tag 5x5_with_dim_128.1run
+
+
+<!-- # GraphGPS: General Powerful Scalable Graph Transformers
 
 [![arXiv](https://img.shields.io/badge/arXiv-2205.12454-b31b1b.svg)](https://arxiv.org/abs/2205.12454)
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/recipe-for-a-general-powerful-scalable-graph/graph-regression-on-zinc)](https://paperswithcode.com/sota/graph-regression-on-zinc?p=recipe-for-a-general-powerful-scalable-graph)
@@ -140,4 +150,4 @@ If you find this work useful, please cite our NeurIPS 2022 paper:
   volume={35},
   year={2022}
 }
-```
+``` -->
