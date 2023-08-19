@@ -1,6 +1,6 @@
  ### How to use this repo?
 
-1. 现在最好的结果可以直接在Graphgps_shared directory下使用指令执行, 所跑的model是使用LapPE, RWSE, 并且GIMaskEncoder(Graph Invariant MaskEncoder)的输入是degree以及pagerank。具体model的构型可以参考configs/VGN/zinc-GINE_LapPE+GIMask+RWSE.yaml, 比较重要的几个参数是总共5层，每层使用5个clusters，并且其中involve的GINEConv的hidden dimension是128，模型的总参数量为: 479261
+1. 现在最好的结果可以直接在Graphgps_shared directory下使用指令执行, 所跑的model是使用LapPE, RWSE, 并且GIMaskEncoder(Graph Invariant MaskEncoder)的输入是degree以及pagerank。具体model的构型可以参考configs/VGN/zinc-GINE_LapPE+GIMask+RWSE.yaml, 比较重要的几个参数是总共5层，每层使用5个clusters，并且其中involve的GINEConv的hidden dimension是96，模型的总参数量为: 479261
 ```
 chmod +x ./run/run_experiments.sh
 ./run/run_experimetns
