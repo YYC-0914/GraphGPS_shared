@@ -5,7 +5,7 @@
 chmod +x ./run/run_experiments.sh
 ./run/run_experimetns
 ```
-2. 在run_experiments file中已经读取了当前最好的模型的config，只会跑一个seed。如果想要跑多个seed的话可以调整上方shell语句的iteration数量。实验进行时会有一个slurm out file出现实时回报当前的performance。最终的结果会被存放在results文件夹中。具体文件的命名可以直接调整shell file，现在的命名为zinc-VGN_LapPE+GIMask+RWSE "name_tag 5x5_with_dim_128.1run
+2. 在run_experiments file中已经读取了当前最好的模型的config，只会跑一个seed。如果想要跑多个seed的话可以调整上方shell语句的iteration数量。实验进行时会有一个slurm out file出现实时回报当前的performance。最终的结果会被存放在results文件夹中。具体文件的命名可以直接调整shell file，现在的命名为zinc-VGN_LapPE+GIMask+RWSE "name_tag 5x5_with_dim_96.1run
 
 
 <!-- # GraphGPS: General Powerful Scalable Graph Transformers

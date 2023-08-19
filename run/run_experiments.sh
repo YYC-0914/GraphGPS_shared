@@ -50,7 +50,7 @@ cfg_dir="configs/VGN"
 
 DATASET="zinc"
 slurm_directive="--time=0-15:00:00 --mem=16G --gres=gpu:1 --cpus-per-task=4 -p AI4Phys"
-run_repeats ${DATASET} VGN_LapPE+GIMask+RWSE "name_tag 5x5_with_dim_128.1run"
+run_repeats ${DATASET} VGN_LapPE+GIMask+RWSE "name_tag 5x5_with_dim_96.1run"
 ################################################################################
 
 
