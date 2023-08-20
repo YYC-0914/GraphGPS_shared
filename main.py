@@ -26,6 +26,11 @@ from graphgps.finetuning import load_pretrained_model_cfg, \
     init_model_from_pretrained
 from graphgps.logger import create_logger
 
+# import os
+# os.environ['WANDB_DIR'] = os.getcwd() + "/wandb/"
+# os.environ['WANDB_CACHE_DIR'] = os.getcwd() + "/wandb/.cache/"
+# os.environ['WANDB_CONFIG_DIR'] = os.getcwd() + "/wandb/.config/"
+
 
 torch.backends.cuda.matmul.allow_tf32 = True  # Default False in PyTorch 1.12+
 torch.backends.cudnn.allow_tf32 = True  # Default True

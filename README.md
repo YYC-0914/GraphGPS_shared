@@ -7,6 +7,8 @@ chmod +x ./run/run_experiments.sh
 ```
 2. 在run_experiments file中已经读取了当前最好的模型的config，只会跑一个seed。如果想要跑多个seed的话可以调整上方shell语句的iteration数量。实验进行时会有一个slurm out file出现实时回报当前的performance。最终的结果会被存放在results文件夹中。具体文件的命名可以直接调整shell file，现在的命名为zinc-VGN_LapPE+GIMask+RWSE "name_tag 5x5_with_dim_96.1run
 
+3. Wandb使用，修改过之后现在直接run/run_experiments即可。但要注意的是要现在conda中pip install wandb, 并且在wandb.login后输入api key (在wandb主页中)。设置完成之后在terminal输入proxy_on就可以访问wandb了～
+
 
 <!-- # GraphGPS: General Powerful Scalable Graph Transformers
 

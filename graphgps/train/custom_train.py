@@ -108,7 +108,9 @@ def custom_train(loggers, loaders, model, optimizer, scheduler):
             wandb_name = make_wandb_name(cfg)
         else:
             wandb_name = cfg.wandb.name
-        run = wandb.init(entity=cfg.wandb.entity, project=cfg.wandb.project,
+        # run = wandb.init(entity=cfg.wandb.entity, project=cfg.wandb.project,
+        #                  name=wandb_name)
+        run = wandb.init(project=cfg.wandb.project,
                          name=wandb_name)
         run.config.update(cfg_to_dict(cfg))
 

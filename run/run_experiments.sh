@@ -3,6 +3,7 @@
 # Run this script from the project root dir.
 
 function run_repeats {
+    proxy_on
     dataset=$1
     cfg_suffix=$2
     # The cmd line cfg overrides that will be passed to the main.py,
@@ -25,7 +26,7 @@ function run_repeats {
 
     # Run each repeat as a separate job
     for SEED in {0..0}; do
-        script="sbatch ${slurm_directive} -J ${cfg_suffix}-${dataset} run/wrapper.sb ${main} --repeat 1 seed ${SEED} ${common_params} wandb.use False" 
+        script="sbatch ${slurm_directive} -J ${cfg_suffix}-${dataset} run/wrapper.sb ${main} --repeat 1 seed ${SEED} ${common_params} wandb.use True" 
         echo $script
         eval $script
     done
