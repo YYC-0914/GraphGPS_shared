@@ -57,10 +57,17 @@ def compute_posenc_stats(data, pe_types, is_undirected, cfg):
 
     if 'GIMaskEncoder' in pe_types:
         # calculate required graph invariant encodings
+        # print("calculate required graph invariant encodings")
         graph_invariant = cfg.posenc_GIMaskEncoder.graph_invariant
         graph_encoding = get_graph_encoding(to_networkx(data), graph_invariant)
         data.encoding = graph_encoding.float()
+
+    if 'LapPE' in pe_types and cfg.posenc_LapPE.need_GIEncoding:
+        graph_invariant = cfg.posenc_LapPE.graph_invariant
+        graph_encoding = get_graph_encoding(to_networkx(data), graph_invariant)
+        data.encoding = graph_encoding.float()
         
+
 
     if 'LapPE' in pe_types or 'EquivStableLapPE' in pe_types:
         # Eigen-decomposition with numpy, can be reused for Heat kernels.

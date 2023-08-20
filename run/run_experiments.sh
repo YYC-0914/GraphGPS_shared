@@ -3,7 +3,6 @@
 # Run this script from the project root dir.
 
 function run_repeats {
-    proxy_on
     dataset=$1
     cfg_suffix=$2
     # The cmd line cfg overrides that will be passed to the main.py,
@@ -47,12 +46,21 @@ done
 ################################################################################
 
 ################################################################################
-cfg_dir="configs/VGN"
+# cfg_dir="configs/VGN"
+
+# DATASET="zinc"
+# slurm_directive="--time=0-15:00:00 --mem=16G --gres=gpu:1 --cpus-per-task=4 -p AI4Phys"
+# run_repeats ${DATASET} VGN_LapPE+GIMask+RWSE "name_tag 5x5_with_dim_128_2_feature_normalized.1run"
+# run_repeats ${DATASET} VGN "name_tag 5x5_with_dim_96_max_freqs_2.1run"
+# run_repeats ${DATASET} GINE_LapPE+RWSE "name_tag gine.1run"
+################################################################################
+
+
+cfg_dir="configs/HMN"
 
 DATASET="zinc"
 slurm_directive="--time=0-15:00:00 --mem=16G --gres=gpu:1 --cpus-per-task=4 -p AI4Phys"
-run_repeats ${DATASET} VGN_LapPE+GIMask+RWSE "name_tag 5x5_with_dim_96.1run"
-################################################################################
+run_repeats ${DATASET} HMN_LapPE+RWSE "name_tag 5x1x5_with_dim_96.1run"
 
 
 # run_repeats ${DATASET} GINE_LapPE+RWSE "name_tag gine.1run"

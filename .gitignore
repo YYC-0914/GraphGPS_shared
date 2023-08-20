@@ -23,6 +23,7 @@ splits/
 wandb/
 __pycache__/
 slurm_out/
+*.out
 
 .idea
 *.log

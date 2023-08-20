@@ -13,3 +13,11 @@ def custom_gnn_cfg(cfg):
     cfg.gnn.num_clusters = 3
     cfg.gnn.train_eps = False
     cfg.gnn.scaling = 3
+    cfg.gnn.GIMaskEncoder_layers = 2 
+    cfg.gnn.GIMaskEncoder_raw_norm_type = None
+    cfg.gnn.GIMaskEncoder_hidden_dim = 8
+    cfg.gnn.GIMaskEncoder_graph_invariant = ["degree", "pagerank"]
+    cfg.gnn.GIMaskEncoder_batch_norm = True 
+    cfg.gnn.HeatConvBlock_n_layers = 1
+    cfg.gnn.layers_block = 5
+    

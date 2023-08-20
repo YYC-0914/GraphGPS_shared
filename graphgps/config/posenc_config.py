@@ -35,8 +35,6 @@ def set_cfg_posenc(cfg):
 
         pecfg.hidden_dim = 8
 
-        pecfg.graph_invariant = ["degree"]
-
         # Number of layers in PE encoder model
         pecfg.layers = 3
 
@@ -54,6 +52,8 @@ def set_cfg_posenc(cfg):
         pecfg.pass_as_var = False
         
         pecfg.batch_norm = True
+        pecfg.need_GIEncoding = True
+        pecfg.graph_invariant = ["degree"]
 
     # Config for EquivStable LapPE
     cfg.posenc_EquivStableLapPE.enable = False
